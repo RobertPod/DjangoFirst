@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <title>Robert fist Django App</title>
+</head>
+
+<body>
+    <h1>Robert application body</h1>
+    <p>my treasures:</p>
+    {% for treasure in treasures %}
+        <p>{{ treasure.name }}
+        {% if treasure.value > 0 %}
+            {{ treasure.value }}</p>
+        {% else %}
+            Unknown</p>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
